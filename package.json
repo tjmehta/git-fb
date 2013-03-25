@@ -1,0 +1,24 @@
+{
+  "author": "Tejesh Mehta <tejesh.mehta@gmail.com>",
+  "name": "git-fb",
+  "keywords": [
+    "github",
+    "github-flow",
+    "git",
+    "git-flow",
+    "feature-branch"
+  ],
+  "description": "Git feature-branch workflow helper commands",
+  "version": "0.0.1",
+  "bin": {
+	"git-fb"    : "./bin/git-fb",
+	"git-sync"  : "./bin/git-sync",
+	"git-pullr" : "./bin/git-pullr",
+	"git-done"  : "./bin/git-done"
+  },
+  "dependencies": {
+	"commander" : "~1.1.1",
+	"github"    : "~0.1.8",
+	"keychain"  : "git://github.com/tjmehta/node-keychain.git#0.0.4"
+  }
+}

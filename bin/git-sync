@@ -1,0 +1,16 @@
+#!/bin/sh
+
+src=$1
+dst=`git rev-parse --abbrev-ref HEAD`
+
+# test -z $name && echo "feature branch name required." && exit 1
+test -z $src && src=`git config --get gitfb.integrationBranch`
+test -z $src && src=development
+
+
+git checkout $src
+git pull origin $src
+git checkout $dst
+git merge $src
+git commit -m "Merged with $src."
+git push origin $dst
