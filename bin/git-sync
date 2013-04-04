@@ -1,9 +1,8 @@
 #!/bin/sh
 
 src=$1
-dst=`git rev-parse --abbrev-ref HEAD`
+dst=`git rev-parse --abbrev-ref HEAD` #current branch
 
-# test -z $name && echo "feature branch name required." && exit 1
 test -z $src && src=`git config --get gitfb.integrationBranch`
 test -z $src && src=development
 

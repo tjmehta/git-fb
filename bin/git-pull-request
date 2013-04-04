@@ -10,10 +10,6 @@ program
   .parse(process.argv)
 ;
 
-// if (!program.args.length || !program.command) {
-//   return program.help();
-// }
-
 var onError = function (err) {
   throw err;
 };
@@ -39,5 +35,3 @@ githubInfo.get(function (err, info) {
     });
   }
 });
-
-
