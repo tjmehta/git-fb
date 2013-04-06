@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+
+var program    = require('commander');
+var spawn      = require('child_process').spawn;
+var GitHub     = require('github');
+var GitHubInfo = require('../lib/github-info');
+
+program
+  .usage('<title ...> <branch ...>')
+  .parse(process.argv)
+;
+
+var onError = function (err) {
+  throw err;
+};
+
+var githubInfo = new GitHubInfo();
+githubInfo.get(function (err, info) {
+  if (err) { onError(err); } else {
+    var github = new GitHub({
+      version: '3.0.0',
+      timeout: 5000
+    });
+    github.authenticate({
+      type: 'basic',
+      username: info.username,
+      password: info.password
+    });
+    github.pullRequest.create({
+      user  : info.username,
+      repo  : info.repo,
+      title : program.args[0],
+      base  : program.args[1] || info.integrationBranch,
+      head  : info.branch
+    });
+  }
+});
