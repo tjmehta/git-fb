@@ -19,6 +19,6 @@
   "dependencies": {
     "commander" : "~1.1.1",
     "github"    : "~0.1.8",
-    "keychain"  : "git://github.com/tjmehta/node-keychain.git#0.0.4"
+    "keychain"  : "~0.0.4"
   }
 }

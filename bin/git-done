@@ -1,0 +1,12 @@
+#!/bin/sh
+
+dst=$1
+src=`git rev-parse --abbrev-ref HEAD`
+
+test -z $dst && dst=`git config --get gitfb.integrationBranch`
+test -z $dst && dst=master
+
+
+git checkout $src
+git merge $dst
+git push origin --delete $src

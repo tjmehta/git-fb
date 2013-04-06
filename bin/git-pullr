@@ -10,9 +10,16 @@ program
   .parse(process.argv)
 ;
 
+var title  = program.args[0];
+var branch = program.args[1];
+
 var onError = function (err) {
   throw err;
 };
+
+if (!title) {
+  onError(new Error('Pull request title is required.'));
+}
 
 var githubInfo = new GitHubInfo();
 githubInfo.get(function (err, info) {
@@ -29,8 +36,8 @@ githubInfo.get(function (err, info) {
     github.pullRequest.create({
       user  : info.username,
       repo  : info.repo,
-      title : program.args[0],
-      base  : program.args[1] || info.integrationBranch,
+      title : title,
+      base  : branch || info.integrationBranch,
       head  : info.branch
     });
   }
