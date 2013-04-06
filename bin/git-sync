@@ -4,7 +4,7 @@ src=$1
 dst=`git rev-parse --abbrev-ref HEAD` #current branch
 
 test -z $src && src=`git config --get gitfb.integrationBranch`
-test -z $src && src=development
+test -z $src && src=master
 
 
 git checkout $src
