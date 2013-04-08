@@ -1,0 +1,13 @@
+#!/bin/sh
+
+del=$1
+
+# test -z $src && src=`git rev-parse --abbrev-ref HEAD` #current branch
+test -z $del && echo "feature branch name required." && exit 1
+
+test -z $dst && dst=`git config --get gitfb.integrationBranch`
+test -z $dst && dst=master
+
+
+git checkout $dst
+git push origin --delete $del
