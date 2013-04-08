@@ -11,3 +11,4 @@ git checkout $int
 git merge $don
 git branch -D $don
 git push origin --delete $don
+git push origin $int
