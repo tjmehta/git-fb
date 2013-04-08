@@ -10,4 +10,5 @@ test -z $dst && dst=master
 
 
 git checkout $dst
+git branch -D $del
 git push origin --delete $del
