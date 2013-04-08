@@ -1,12 +1,13 @@
 #!/bin/sh
 
-dst=$1
-src=`git rev-parse --abbrev-ref HEAD`
+int=$1
+don=`git rev-parse --abbrev-ref HEAD`
 
-test -z $dst && dst=`git config --get gitfb.integrationBranch`
-test -z $dst && dst=master
+test -z $int && int=`git config --get gitfb.integrationBranch`
+test -z $int && int=master
 
 
-git checkout $src
-git merge $dst
-git push origin --delete $src
+git checkout $int
+git merge $don
+git branch -D $don
+git push origin --delete $don
