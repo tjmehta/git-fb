@@ -11,7 +11,7 @@ program
 ;
 
 var title  = program.args[0];
-var branch = program.args[1] || info.integrationBranch;
+var branch = program.args[1];
 
 var onError = function (err) {
   throw err;
@@ -33,14 +33,12 @@ githubInfo.get(function (err, info) {
       username: info.username,
       password: info.password
     });
-    github.pullRequests.create({
-      user  : info.repoOwner,
+    github.pullRequest.create({
+      user  : info.username,
       repo  : info.repo,
       title : title,
-      base  : branch,
+      base  : branch || info.integrationBranch,
       head  : info.branch
-    }, function (err) {
-      if (err) { onError(err); }
     });
   }
 });
