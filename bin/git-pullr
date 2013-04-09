@@ -34,11 +34,13 @@ githubInfo.get(function (err, info) {
       password: info.password
     });
     github.pullRequests.create({
-      user  : info.username,
+      user  : info.repoOwner,
       repo  : info.repo,
       title : title,
       base  : branch || info.integrationBranch,
       head  : info.branch
+    }, function (err) {
+      if (err) { onError(err); }
     });
   }
 });
