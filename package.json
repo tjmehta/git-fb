@@ -1,5 +1,8 @@
 {
-  "author": "Tejesh Mehta <tejesh.mehta@gmail.com>",
+  "author": {
+    "name": "Tejesh Mehta",
+    "email": "tejesh.mehta@gmail.com"
+  },
   "name": "git-fb",
   "keywords": [
     "github",
@@ -11,16 +14,24 @@
   "description": "Git feature-branch workflow helper commands",
   "version": "0.0.1",
   "bin": {
-    "git-fb"    : "./bin/git-fb",
-    "git-sync"  : "./bin/git-sync",
-    "git-pullr" : "./bin/git-pullr",
-    "git-done"  : "./bin/git-done",
-    "git-donepush"  : "./bin/git-donepush",
-    "git-boom"  : "./bin/git-boom"
+    "git-fb": "./bin/git-fb",
+    "git-sync": "./bin/git-sync",
+    "git-pullr": "./bin/git-pullr",
+    "git-done": "./bin/git-done",
+    "git-donepush": "./bin/git-donepush",
+    "git-boom": "./bin/git-boom"
   },
   "dependencies": {
-    "commander" : "~1.1.1",
-    "github"    : "~0.1.8",
-    "keychain"  : "~0.0.4"
-  }
+    "commander": "~1.1.1",
+    "github": "~0.1.8",
+    "keychain": "~0.0.4",
+    "procstreams": "~0.3.0"
+  },
+  "readme": "Git feature-branch workflow helper commands",
+  "readmeFilename": "Readme.md",
+  "_id": "git-fb@0.0.1",
+  "dist": {
+    "shasum": "1fd804457e95575da454edb83c480eb91722c6d7"
+  },
+  "_from": "tjmehta/git-fb"
 }
