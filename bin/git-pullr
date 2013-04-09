@@ -33,7 +33,7 @@ githubInfo.get(function (err, info) {
       username: info.username,
       password: info.password
     });
-    github.pullRequest.create({
+    github.pullRequests.create({
       user  : info.username,
       repo  : info.repo,
       title : title,
