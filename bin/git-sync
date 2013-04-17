@@ -6,11 +6,14 @@ dst=`git rev-parse --abbrev-ref HEAD` #current branch
 test -z $src && src=`git config --get gitfb.integrationBranch`
 test -z $src && src=master
 
-git stash
+stashout="`git stash`"
 git checkout $src
 git pull origin $src
 git checkout $dst
 git merge $src
 git commit -m "Merged with $src."
 git push origin $dst
-git stash pop
+if [[ "$x" != *"No local changes to save"* ]]
+then
+	git stash pop # pop what was just stashed
+fi
