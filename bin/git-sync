@@ -13,7 +13,7 @@ git checkout $dst
 git merge $src
 git commit -m "Merged with $src."
 git push origin $dst
-if [[ "$x" != *"No local changes to save"* ]]
+if [[ "$stashout" != *"No local changes to save"* ]]
 then
 	git stash pop # pop what was just stashed
 fi
