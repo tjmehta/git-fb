@@ -6,12 +6,13 @@ var GitHub     = require('github');
 var GitHubInfo = require('../lib/github-info');
 
 program
-  .usage('<title ...> <branch ...>')
+  .usage('<title ...> <description ...> <branch ...>')
   .parse(process.argv)
 ;
 
-var title  = program.args[0];
-var branch = program.args[1];
+var title        = program.args[0];
+var description  = program.args[1];
+var branch       = program.args[2];
 
 var onError = function (err) {
   throw err;
@@ -20,6 +21,7 @@ var onError = function (err) {
 if (!title) {
   onError(new Error('Pull request title is required.'));
 }
+
 
 var githubInfo = new GitHubInfo();
 githubInfo.get(function (err, info) {

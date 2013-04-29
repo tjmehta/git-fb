@@ -12,7 +12,7 @@
     "feature-branch"
   ],
   "description": "Git feature-branch workflow helper commands",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "bin": {
     "git-fb": "./bin/git-fb",
     "git-sync": "./bin/git-sync",
