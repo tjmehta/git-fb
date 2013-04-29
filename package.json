@@ -13,6 +13,11 @@
   ],
   "description": "Git feature-branch workflow helper commands",
   "version": "0.1.2",
+  "repository" :
+  {
+    "type" : "git",
+    "url" : "http://github.com/tjmehta/git-fb.git"
+  },
   "bin": {
     "git-fb": "./bin/git-fb",
     "git-sync": "./bin/git-sync",

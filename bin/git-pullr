@@ -39,6 +39,7 @@ githubInfo.get(function (err, info) {
       user  : info.repoOwner,
       repo  : info.repo,
       title : title,
+      body  : description,
       base  : branch || info.integrationBranch,
       head  : info.branch
     }, function (err) {
