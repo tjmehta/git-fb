@@ -34,7 +34,6 @@
   },
   "readme": "Git feature-branch workflow helper commands",
   "readmeFilename": "Readme.md",
-  "_id": "git-fb@0.0.1",
   "dist": {
     "shasum": "1fd804457e95575da454edb83c480eb91722c6d7"
   },
