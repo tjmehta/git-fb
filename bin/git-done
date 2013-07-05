@@ -9,5 +9,6 @@ test -z $int && int=master
 
 git checkout $int
 git merge $don
+git commit -m "Merged with $don."
 git branch -D $don
 git push origin --delete $don
