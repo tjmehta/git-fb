@@ -16,7 +16,11 @@
   "repository" :
   {
     "type" : "git",
-    "url" : "http://github.com/tjmehta/git-fb.git"
+    "url" : "https://github.com/tjmehta/git-fb.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tjmehta/git-fb/issues"
   },
   "bin": {
     "git-fb": "./bin/git-fb",
