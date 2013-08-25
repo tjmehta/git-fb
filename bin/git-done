@@ -12,3 +12,4 @@ git merge $don
 git commit -m "Merged with $don."
 git branch -D $don
 git push origin --delete $don
+git push origin $int

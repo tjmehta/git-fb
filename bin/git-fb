@@ -7,9 +7,23 @@ test -z $name && echo "feature branch name required." && exit 1
 test -z $src && src=`git config --get gitfb.integrationBranch`
 test -z $src && src=master
 
+cur=`git rev-parse --abbrev-ref HEAD`
 
-git checkout $src
+if [ $cur != $src ]
+then
+  wipout=`git wip`
+  git checkout $src
+else
+  stashout=`git stash`
+fi
 git pull origin $src
 git branch $name
 git checkout $name
 git push origin $name
+if [ $cur == $src ]
+then
+  if [[ $stashout != *"No local changes to save"* ]]
+  then
+    git stash pop # pop what was just stashed
+  fi
+fi

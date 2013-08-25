@@ -27,7 +27,6 @@
     "git-sync": "./bin/git-sync",
     "git-pullr": "./bin/git-pullr",
     "git-done": "./bin/git-done",
-    "git-donepush": "./bin/git-donepush",
     "git-boom": "./bin/git-boom"
   },
   "dependencies": {

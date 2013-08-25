@@ -8,7 +8,19 @@ test -z $del && echo "feature branch name required." && exit 1
 test -z $dst && dst=`git config --get gitfb.integrationBranch`
 test -z $dst && dst=master
 
+cur=`git rev-parse --abbrev-ref HEAD`
 
+if [ $cur == $del ]
+then
+  stashout=`git stash`
+fi
 git checkout $dst
 git branch -D $del
 git push origin --delete $del
+if [ $cur == $del ]
+then
+  if [[ $stashout != *"No local changes to save"* ]]
+  then
+    git stash pop # pop what was just stashed
+  fi
+fi
