@@ -12,11 +12,10 @@
     "feature-branch"
   ],
   "description": "Git feature-branch workflow helper commands",
-  "version": "0.1.3",
-  "repository" :
-  {
-    "type" : "git",
-    "url" : "https://github.com/tjmehta/git-fb.git"
+  "version": "0.2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tjmehta/git-fb.git"
   },
   "license": "MIT",
   "bugs": {
