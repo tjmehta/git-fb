@@ -26,13 +26,17 @@
     "git-sync": "./bin/git-sync",
     "git-pullr": "./bin/git-pullr",
     "git-done": "./bin/git-done",
-    "git-boom": "./bin/git-boom"
+    "git-boom": "./bin/git-boom",
+    "git-wip": "./node_modules/git-wip/bin/git-wip",
+    "git-unwip": "./node_modules/git-wip/bin/git-unwip",
+    "git-resume": "./node_modules/git-wip/bin/git-resume"
   },
   "dependencies": {
     "commander": "~1.1.1",
     "github": "~0.1.8",
     "keychain": "~0.0.4",
-    "procstreams": "~0.3.0"
+    "procstreams": "~0.3.0",
+    "git-wip": "~0.1.0"
   },
   "readme": "Git feature-branch workflow helper commands",
   "readmeFilename": "Readme.md",

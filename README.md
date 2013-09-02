@@ -1,12 +1,12 @@
 ##Git feature-branch workflow helper commands
 
-###How to Install
+##How to Install
 
 ```sh
-$ npm install -g git-wip git-fb #git-wip is required for git-fb
+$ npm install -g git-fb
 ```
 
-###Setup
+##Setup
 
 If you want to setup you integration branch as something other than master use the following command:
 ```sh
@@ -15,47 +15,60 @@ $ git config user.name <github-username> # not email
 ```
 
 ###Commands
+####git fb new-feature-branch
+####git sync
+####git pullr "title" "description"
+####git done
+below provided by git-wip
+####git wip
+####git unwip
+####git resume some-feature-branch
 
+##Documentation
+
+####git fb new-feature-branch
 ```sh
 $ git fb <new-feature-branch>
 ```
 * creates a new branch off of the integration branch
-1) if on integration branch ```git stash``` else ```git wip``` * see git-wip below
-2) checks out the integration branch
-3) pulls down the integration branch from origin
-4) creates a branch with the name specified
-5) checks out the newly created branch
-6) pushes branch to origin
-7) if coming from integration branch and had stashed ```git stash pop```
+  1. if on integration branch ```git stash``` else ```git wip``` * see git-wip below
+  2. checks out the integration branch
+  3. pulls down the integration branch from origin
+  4. creates a branch with the name specified
+  5. checks out the newly created branch
+  6. pushes branch to origin
+  7. if coming from integration branch and had stashed ```git stash pop```
 
 ```sh
 $ git fb <new-feature-branch> <source-branch>
 ```
 * creates a new branch off of the source branch
-1) if on source branch ```git stash``` else ```git wip```
-2) checks out the source branch
-3) pulls down the source branch from origin
-4) creates a branch with the name specified
-5) checks out the newly created branch
-6) pushes branch to origin
-7) if coming from source branch and had stashed ```git stash pop```
+  1. if on source branch ```git stash``` else ```git wip```
+  2. checks out the source branch
+  3. pulls down the source branch from origin
+  4. creates a branch with the name specified
+  5. checks out the newly created branch
+  6. pushes branch to origin
+  7. if coming from source branch and had stashed ```git stash pop```
 
+####git sync
 ```sh
 $ git sync
 ```
 * pulls and merges the current branch to the latest integration branch (set as gitfb.integrationBranch or master)
-1) checks out the integration branch
-2) pulls down the integration branch from origin
-3) checks out the current branch again
-4) merges the integration branch into current branch
-5) commits automerge, if successful (else you manually merge and push on your own)
-6) pushes the current branch to origin
+  1. checks out the integration branch
+  2. pulls down the integration branch from origin
+  3. checks out the current branch again
+  4. merges the integration branch into current branch
+  5. commits automerge, if successful (else you manually merge and push on your own)
+  6. pushes the current branch to origin
 
 ```sh
 $ git sync <branch-to-sync-with>
 ```
 * same as git sync except you can specify the branch you'd like to "sync" with
 
+####git pullr "title" "description"
 ```sh
 $ git pullr <title> <description>
 ```
@@ -66,34 +79,39 @@ $ git pullr <title> <description> <branch-to-pull-request-to>
 ```
 * you can specify the branch to pull-request into, just remember it is the third parameter; so description is required
 
-git done
+
+####git done
+```sh
+$ git done
+```
 * merges into default integration branch (set as gitfb.integrationBranch or master)
-1) checks out the integration branch
-2) merges the current branch
-3) commits automerge, if successful (else you manually merge and push on your own)
-4) deletes current branch locally
-5) deletes current branch on origin
-6) pushes integration branch to origin
+  1. checks out the integration branch
+  2. merges the current branch
+  3. commits automerge, if successful (else you manually merge and push on your own)
+  4. deletes current branch locally
+  5. deletes current branch on origin
+  6. pushes integration branch to origin
 
 ```sh
 $ git done <branch-to-merge-into>
 ```
 * same as git done but you can specify the branch to merge into
 
-####Also requires git-wip (tjmehta/git-wip):
+###Also requires git-wip (tjmehta/git-wip):
 
+####git wip
 ```sh
 $ git wip
 ```
-* alias for ```git stash save wip```
+* alias for ```git add .; git commit -m __wip;```
 
-
+####git unwip
 ```sh
 $ git unwip
 ```
-* finds first stash for current branch and pops it
+* checks if last commit is a wip and ```git reset HEAD^```
 
-
+####git resume
 ```sh
 $ git resume <branch>
 ```
