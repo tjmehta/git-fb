@@ -1,5 +1,19 @@
 ##Git feature-branch workflow helper commands
 
+##Bash Commands
+#### ```git fb new-feature```
+#### ```git sync```
+#### ```git pullr "title" "description"```
+#### ```git done```
+below provided by [git-wip](https://github.com/tjmehta/git-wip) (included):
+#### ```git wip```
+#### ```git unwip```
+#### ```git resume some-feature```
+
+##Requirements
+
+Node.js - [Download here](http://nodejs.org/download/)
+
 ##How to Install
 
 ```sh
@@ -10,23 +24,14 @@ $ npm install -g git-fb
 
 If you want to setup you integration branch as something other than master use the following command:
 ```sh
-$ git config gitfb.integrationBranch <integration-branch>
+$ git config gitfb.integrationBranch <integration-branch> # defaults to master
 $ git config user.name <github-username> # not email
 ```
 
-###Commands
-####git fb new-feature-branch
-####git sync
-####git pullr "title" "description"
-####git done
-below provided by git-wip
-####git wip
-####git unwip
-####git resume some-feature-branch
 
 ##Documentation
 
-####git fb new-feature-branch
+####git fb new-feature
 ```sh
 $ git fb <new-feature-branch>
 ```
@@ -97,7 +102,7 @@ $ git done <branch-to-merge-into>
 ```
 * same as git done but you can specify the branch to merge into
 
-###Also requires git-wip (tjmehta/git-wip):
+###Commands provided by [git-wip](https://github.com/tjmehta/git-wip):
 
 ####git wip
 ```sh
