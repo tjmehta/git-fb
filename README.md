@@ -1,10 +1,11 @@
-##Git feature-branch workflow helper commands
+##GitHub Flow Commands (feature-branch helpers)
 
 ##Bash Commands
 #### ```git fb new-feature```
 #### ```git sync```
 #### ```git pullr "title" "description"```
 #### ```git done```
+#### ```git boom```
 below provided by [git-wip](https://github.com/tjmehta/git-wip) (included):
 #### ```git wip```
 #### ```git unwip```
@@ -84,7 +85,6 @@ $ git pullr <title> <description> <branch-to-pull-request-to>
 ```
 * you can specify the branch to pull-request into, just remember it is the third parameter; so description is required
 
-
 ####git done
 ```sh
 $ git done
@@ -101,6 +101,12 @@ $ git done
 $ git done <branch-to-merge-into>
 ```
 * same as git done but you can specify the branch to merge into
+
+####git boom some-feature
+```sh
+$ git boom <branch-to-delete>
+```
+* deletes branch locally and remotely
 
 ###Commands provided by [git-wip](https://github.com/tjmehta/git-wip):
 
