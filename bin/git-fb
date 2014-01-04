@@ -12,14 +12,14 @@ cur=`git rev-parse --abbrev-ref HEAD`
 if [ $cur != $src ]
 then
   wipout=`git wip`
-  git checkout $src
+  git checkout $src &&
 else
   stashout=`git stash`
 fi
-git pull origin $src
-git branch $name
-git checkout $name
-git push origin $name
+git pull origin $src &&
+git branch $name &&
+git checkout $name &&
+git push origin $name &&
 if [ $cur == $src ]
 then
   if [[ $stashout != *"No local changes to save"* ]]

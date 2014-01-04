@@ -7,9 +7,9 @@ test -z $int && int=`git config --get gitfb.integrationBranch`
 test -z $int && int=master
 
 
-git checkout $int
-git merge $don
-git commit -m "Merged with $don."
-git branch -D $don
-git push origin --delete $don
+git checkout $int &&
+git merge $don &&
+git commit -m "Merged with $don." &&
+git branch -D $don &&
+git push origin --delete $don &&
 git push origin $int

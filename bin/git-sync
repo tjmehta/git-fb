@@ -7,11 +7,12 @@ test -z $src && src=`git config --get gitfb.integrationBranch`
 test -z $src && src=master
 
 stashout="`git stash`"
-git checkout $src
-git pull origin $src
-git checkout $dst
-git merge $src
-git commit -m "Merged with $src."
+git fetch origin &&
+git checkout $src &&
+git pull origin $src &&
+git checkout $dst &&
+git merge $src &&
+git commit -m "Merged with $src." &&
 git push origin $dst
 if [[ "$stashout" != *"No local changes to save"* ]]
 then

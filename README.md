@@ -50,12 +50,13 @@ $ git fb <new-feature-branch> <source-branch>
 ```
 * creates a new branch off of the source branch
   1. if on source branch ```git stash``` else ```git wip```
-  2. checks out the source branch
-  3. pulls down the source branch from origin
-  4. creates a branch with the name specified
-  5. checks out the newly created branch
-  6. pushes branch to origin
-  7. if coming from source branch and had stashed ```git stash pop```
+  2. git fetch origin (to fetch branches from origin)
+  3. checks out the source branch
+  4. pulls down the source branch from origin
+  5. creates a branch with the name specified
+  6. checks out the newly created branch
+  7. pushes branch to origin
+  8. if coming from source branch and had stashed ```git stash pop```
 
 ####git sync
 ```sh
