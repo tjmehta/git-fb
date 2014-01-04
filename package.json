@@ -36,7 +36,7 @@
     "github": "~0.1.8",
     "keychain": "~0.0.4",
     "procstreams": "~0.3.0",
-    "git-wip": "~0.1.1"
+    "git-wip": "~0.1.2"
   },
   "readme": "Git feature-branch workflow helper commands",
   "readmeFilename": "Readme.md",
