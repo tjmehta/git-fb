@@ -132,3 +132,6 @@ $ git resume <branch>
 
 ##License
 MIT
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/tjmehta/git-fb/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
