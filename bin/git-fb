@@ -17,7 +17,7 @@ else
   stashout=`git stash`
 fi
 checkoutExitCode=`echo $?`;
-if [ "$socketExitCode" -eq "0" ]
+if [ "$checkoutExitCode" -eq "0" ]
 then
   git pull origin $src &&
   git branch $name &&
