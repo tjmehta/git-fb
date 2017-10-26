@@ -1,6 +1,6 @@
-##GitHub Flow Commands (feature-branch helpers)
+## GitHub Flow Commands (feature-branch helpers)
 
-##Bash Commands
+## Bash Commands
 #### ```git fb new-feature```
 #### ```git sync```
 #### ```git pullr "title" "description"```
@@ -11,17 +11,17 @@ below provided by [git-wip](https://github.com/tjmehta/git-wip) (included):
 #### ```git unwip```
 #### ```git resume some-feature```
 
-##Requirements
+## Requirements
 
 Node.js - [Download here](http://nodejs.org/download/)
 
-##How to Install
+## How to Install
 
 ```sh
 $ npm install -g git-fb
 ```
 
-##Setup
+## Setup
 
 If you want to setup you integration branch as something other than master use the following command:
 ```sh
@@ -30,9 +30,9 @@ $ git config user.name <github-username> # not email
 ```
 
 
-##Documentation
+## Documentation
 
-####git fb new-feature
+#### git fb new-feature
 ```sh
 $ git fb <new-feature-branch>
 ```
@@ -58,7 +58,7 @@ $ git fb <new-feature-branch> <source-branch>
   7. pushes branch to origin
   8. if coming from source branch and had stashed ```git stash pop```
 
-####git sync
+#### git sync
 ```sh
 $ git sync
 ```
@@ -75,7 +75,7 @@ $ git sync <branch-to-sync-with>
 ```
 * same as git sync except you can specify the branch you'd like to "sync" with
 
-####git pullr "title" "description"
+#### git pullr "title" "description"
 ```sh
 $ git pullr <title> <description>
 ```
@@ -86,7 +86,7 @@ $ git pullr <title> <description> <branch-to-pull-request-to>
 ```
 * you can specify the branch to pull-request into, just remember it is the third parameter; so description is required
 
-####git done
+#### git done
 ```sh
 $ git done
 ```
@@ -103,34 +103,34 @@ $ git done <branch-to-merge-into>
 ```
 * same as git done but you can specify the branch to merge into
 
-####git boom some-feature
+#### git boom some-feature
 ```sh
 $ git boom <branch-to-delete>
 ```
 * deletes branch locally and remotely
 
-###Commands provided by [git-wip](https://github.com/tjmehta/git-wip):
+### Commands provided by [git-wip](https://github.com/tjmehta/git-wip):
 
-####git wip
+#### git wip
 ```sh
 $ git wip
 ```
 * alias for ```git add .; git commit -m __wip;```
 
-####git unwip
+#### git unwip
 ```sh
 $ git unwip
 ```
 * checks if last commit is a wip and ```git reset HEAD^```
 
-####git resume
+#### git resume
 ```sh
 $ git resume <branch>
 ```
 * alias for ```git checkout <branch>; git unwip;```
 
 
-##License
+## License
 MIT
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/tjmehta/git-fb/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
